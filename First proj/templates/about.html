@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+    <p>hey this is about about about</p>
+    <ol>
+        {% for name in names %}
+            {% if name == 'Joe' %}
+                <li>{{ name }} is the best</li>
+            {% else %}
+                <li>{{ name }}</li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+{% endblock %}

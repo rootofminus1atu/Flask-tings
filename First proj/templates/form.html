@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Thank you!{% endblock %}
+
+{% block content %}
+<div>
+    <h1>Thanks!</h1>
+    <small>Please confirm your information</small>
+    <br><br>
+    <ul>
+        {% for subscriber in subscribers %}
+            <li>{{ subscriber }}</li>
+        {% endfor %}
+    </ul>
+   
+</div>
+   
+{% endblock %}
+

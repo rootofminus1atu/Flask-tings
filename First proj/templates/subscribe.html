@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Subscribe!{% endblock %}
+
+{% block content %}
+    <p>Yo this is my email newsletter it's very cool</p>
+    <form action="/form" method="POST">
+        <div>
+            <input type="text" name="first_name" placeholder="First Name">
+        </div>
+        <div>
+            <input type="text" name="last_name" placeholder="Last Name">
+        </div>
+        <div>
+            <input type="text" name="email" placeholder="Email Address">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

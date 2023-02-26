@@ -1,0 +1,16 @@
+body {
+  font-style: italic;
+  font-size: 200%;
+}
+
+nav ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+nav ul li {
+  padding: 6px;
+  border: 2px solid black;
+}/*# sourceMappingURL=style.css.map */
