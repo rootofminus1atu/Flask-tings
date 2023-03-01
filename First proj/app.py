@@ -52,3 +52,10 @@ if __name__ == "__main__":
 #
 #
 # ok sometimes python app.py has to be used
+
+
+# AND CREATINV VENVS:
+# 
+# python -m venv name
+# name/Scripts/activate.bat
+# or just cd into the Scripts folder and execute activate.bat there

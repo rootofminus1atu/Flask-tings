@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Card game">
+    <meta name="keywords" content="cards, game">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>
+        {% block title %}Ploobie Cards{% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        <h1><a href="{{ url_for('index') }}">PLOOBIE&nbsp;CARDS</a></h1>
+        <nav>
+            <ul>
+                <li class="{{ 'active' if request.path == url_for('display') }}">
+                    <a href="{{ url_for('display') }}"><b>SEE&nbsp;THEM</b></a>
+                </li>
+                <li class="{{ 'active' if request.path == url_for('about') }}">
+                    <a href="{{ url_for('about') }}"><b>LEARN&nbsp;MORE</b></a>
+                </li>
+                <li class="{{ 'active' if request.path == url_for('shop') }}">
+                    <a href="{{ url_for('shop') }}"><b>BUY&nbsp;THEM</b></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>footer info over here</p>
+    </footer>
+</body>
+</html>
+

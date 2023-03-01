@@ -1,0 +1,202 @@
+$headerSpace: 0.35em;
+
+html,
+body {
+    height: 100%;     /* keeps the footer at the bottom */
+    min-height: 100%; /* keeps the footer at the bottom */
+    margin: 0 auto;
+    width: 100%;
+    max-width: 2000px;
+
+    background-color: rgb(0, 0, 0);
+    color: white;           
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    header {
+        margin: 0 8vw;
+        padding: 0;
+        /* background-image: linear-gradient(to right, transparent, black, transparent) */;
+
+        a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            transition: 200ms;
+
+            &:hover {
+                text-shadow: 0 0 10px rgb(91, 250, 255), 0 0 20px rgb(91, 250, 255);
+            }
+        }
+
+        h1 {
+            margin: 0;
+            padding: $headerSpace;
+            font-size: 200%;
+            /* text-shadow: 0 0 6px rgb(0, 255, 255); */
+            text-align: center;
+
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-image: linear-gradient(to right, transparent, rgb(255, 255, 255), transparent);
+            }
+        }
+
+        nav {
+            padding: 2*$headerSpace 0;
+            position: relative;
+    
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+    
+                display: flex;            /* these 3 lines center things inside of it */
+                justify-content: space-evenly;  /*          glory to the 3 lines            */
+                align-items: center;
+    
+                li a {
+                    position: relative;
+
+                    &:hover {
+                        text-shadow: 0 0 10px white, 0 0 20px white;
+                    }
+                    /*
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -1px;
+                        left: 50%;                   
+                        transform: translateX(-50%) translateY(400%); 
+                        width: 0;
+                        height: 2px;
+                        background-image: linear-gradient(to right, transparent, rgb(255, 255, 255), transparent);
+                        transition: 200ms;
+                    }
+
+                    &:hover::after {
+                        width: 120%;
+                    }
+                    */
+                }
+            }
+
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-image: linear-gradient(to right, transparent, rgb(255, 255, 255), transparent);
+            }
+
+            
+            
+        }
+
+        .active a {
+            text-shadow: 0 0 10px white, 0 0 20px white;
+        }
+
+        
+    }
+
+    main {
+        flex: 1;
+
+        section {
+            height: 30em;
+            z-index: 2;
+
+            display: flex;            /* these 3 lines center things inside of it */
+            justify-content: center;  /*          glory to the 3 lines            */
+            align-items: center;
+            position: relative;       /*       NO overlap between main groups     */
+                                      /*        although this isn't needed        */
+            
+                                      
+            .hidden {
+                visibility: hidden;
+                color: black;
+                transition: all 2000ms;
+            }
+
+            .visible {
+                color: white;
+                visibility: visible;
+                transition: all 2000ms;
+            }
+
+            .card-container {
+                background-color: rgba(245, 41, 41, 0.15);
+                height: 2em;
+                aspect-ratio: 5/7;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .card {
+                    background-color: rgba(56, 56, 56, 0.15);
+                    border: 2px black solid;
+                    border-radius: 0.5em;
+
+                    height: 10em;
+                    aspect-ratio: 5/7;
+                    transition: 1600ms cubic-bezier(0.075, 0.82, 0.165, 1);  /* animation time + style */
+                    
+                    position: absolute;  /* YES overlap between cards */
+                }
+
+                &:hover > .card:nth-child(1) {
+                    background-color: rgba(41, 245, 51, 0.15);
+                    transform: translate(5em, 0);
+    
+                }
+
+                &:hover > .card:nth-child(2) {
+                    background-color: rgba(44, 41, 245, 0.15);
+                    transform: rotateZ(60deg) rotateX(180deg);
+                }
+                
+            }
+
+            &:nth-child(2) {
+                background-color: rgba(255,255,255,0.15);
+            }
+    
+            &:nth-child(3) {
+                background-color: rgba(255,255,255,0.1);
+            }
+        }
+    }
+
+    footer {
+        background-color: blue;
+        margin-top: auto;
+        z-index: 2;
+    }
+}
+
+
+
+
+
+
+
+
+            
+    
