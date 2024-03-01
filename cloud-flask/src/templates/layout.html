@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 class="lol-text">Coolest website ever</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/metadata">Metadata</a></li>
+            <li><a href="/file-upload">File upload</a></li>
+            <li><a href="/other">Other</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+    <footer>footer</footer>
+</body>
+</html>
